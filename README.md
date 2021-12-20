@@ -5,7 +5,7 @@ Sistema de RH desenvolvido no tutorial (YouTube) sobre Spring Boot.
 
 **1ª Fase** - Criação do projeto e módulo *Vagas/Candidatos* :heavy_check_mark:
 
-**2ª Fase** - Módulo *Funcionários/Dependentes*;
+**2ª Fase** - Módulo *Funcionários/Dependentes* :heavy_check_mark:
 
 **3ª Fase** - Implementação do *Formulário de Busca* na página inicial.
 
