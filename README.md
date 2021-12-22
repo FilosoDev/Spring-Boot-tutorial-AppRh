@@ -7,7 +7,7 @@ Sistema de RH desenvolvido no tutorial (YouTube) sobre Spring Boot.
 
 **2ª Fase** - Módulo *Funcionários/Dependentes* :heavy_check_mark:
 
-**3ª Fase** - Implementação do *Formulário de Busca* na página inicial.
+**3ª Fase** - Implementação do *Formulário de Busca* na página inicial. :heavy_check_mark:
 
 ### Instruções de instalação e uso:
 
