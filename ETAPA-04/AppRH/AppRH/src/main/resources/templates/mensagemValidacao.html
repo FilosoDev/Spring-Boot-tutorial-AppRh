@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://thymeleaf.org">
+
+<head>
+<title>| App RH - UC 12 |</title>
+</head>
+
+<body>
+	<div class="alert alert-success alert-dismissible" role="alert"
+		th:if="${not #strings.isEmpty(mensagem)}">
+
+		<span th:text="${mensagem}"></span>
+	</div>
+
+	<div class="alert alert-success alert-danger" role="alert"
+		th:if="${not #strings.isEmpty(mensagem_erro)}">
+
+		<span th:text="${mensagem_erro}"></span>
+	</div>
+
+</body>
+
+</html>
