@@ -17,6 +17,10 @@ Sistema de RH desenvolvido no tutorial (YouTube) sobre Spring Boot.
 
 **3ª Fase** - Implementação do *Formulário de Busca* na página inicial. :heavy_check_mark:
 
+
+**4ª Fase** - Implementação do *Security* no sistema. :heavy_check_mark:
+
+
 [Playlist da Etapa 03 no YouTube](https://youtube.com/playlist?list=PLvtOeOw_Op8kQfcjW0Om23Z0GWBbOMfj5)
 
 
