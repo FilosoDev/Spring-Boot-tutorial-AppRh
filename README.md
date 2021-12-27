@@ -19,7 +19,12 @@ Sistema de RH desenvolvido no tutorial (YouTube) sobre Spring Boot.
 
 [Playlist da Etapa 03 no YouTube](https://youtube.com/playlist?list=PLvtOeOw_Op8kQfcjW0Om23Z0GWBbOMfj5)
 
-**4ª Fase** - Implementação do *Security* no sistema. :heavy_check_mark:
+
+
+**4ª Fase** - Implementação do *Security* no sistema e outros extras. :heavy_check_mark:
+
+[Playlist da Etapa 04 no YouTube](https://youtube.com/playlist?list=PLvtOeOw_Op8kRaARemNCorEhy2kpi2LQU)
+
 
 
 
