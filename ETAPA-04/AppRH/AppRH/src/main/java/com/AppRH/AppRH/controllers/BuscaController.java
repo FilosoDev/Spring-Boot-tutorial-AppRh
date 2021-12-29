@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.AppRH.AppRH.models.Candidato;
-import com.AppRH.AppRH.models.Dependentes;
+import com.AppRH.AppRH.models.Dependente;
 import com.AppRH.AppRH.models.Funcionario;
 import com.AppRH.AppRH.models.Vaga;
 
 import com.AppRH.AppRH.repository.FuncionarioRepository;
 import com.AppRH.AppRH.repository.VagaRepository;
-import com.AppRH.AppRH.repository.DependentesRepository;
+import com.AppRH.AppRH.repository.DependenteRepository;
 import com.AppRH.AppRH.repository.CandidatoRepository;
 
 @Controller
@@ -28,7 +28,7 @@ public class BuscaController {
 	private VagaRepository vr;
 	
 	@Autowired
-	private DependentesRepository dr;
+	private DependenteRepository dr;
 	
 	@Autowired
 	private CandidatoRepository cr;

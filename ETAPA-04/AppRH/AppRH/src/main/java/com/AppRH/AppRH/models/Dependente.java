@@ -8,7 +8,7 @@ import javax.persistence.ManyToOne;
 
 
 @Entity
-public class Dependentes {
+public class Dependente {
 
 	@Id
 	@GeneratedValue
