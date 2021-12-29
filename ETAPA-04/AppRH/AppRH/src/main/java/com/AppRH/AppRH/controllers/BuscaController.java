@@ -34,7 +34,7 @@ public class BuscaController {
 	private CandidatoRepository cr;
 	
 	//GET
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping("/")
 	public ModelAndView abrirIndex() {
 		ModelAndView mv = new ModelAndView("index");
 		return mv;

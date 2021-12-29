@@ -25,7 +25,7 @@ public class VagaController {
 	private CandidatoRepository cr;
 
 	// CADASTRA VAGA
-	@RequestMapping(value = "/cadastrarVaga", method = RequestMethod.GET)
+	@RequestMapping("/cadastrarVaga")
 	public String form() {
 		return "vaga/form-vaga";
 	}
@@ -54,7 +54,7 @@ public class VagaController {
 	}
 
 	//
-	@RequestMapping(value = "/vaga/{codigo}", method = RequestMethod.GET)
+	@RequestMapping("/vaga/{codigo}")
 	public ModelAndView detalhesVaga(@PathVariable("codigo") long codigo) {
 		Vaga vaga = vr.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("vaga/detalhes-vaga");
@@ -113,7 +113,7 @@ public class VagaController {
 
 	// Métodos que atualizam vaga
 	// formulário edição de vaga
-	@RequestMapping(value = "/editar-vaga", method = RequestMethod.GET)
+	@RequestMapping("/editar-vaga")
 	public ModelAndView editarVaga(long codigo) {
 		Vaga vaga = vr.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("vaga/update-vaga");

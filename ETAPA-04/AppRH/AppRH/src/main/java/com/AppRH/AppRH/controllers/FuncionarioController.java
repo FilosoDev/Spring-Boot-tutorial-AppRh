@@ -26,7 +26,7 @@ public class FuncionarioController {
 	private DependenteRepository dr;
 
 	// chamo o form de casdatrar funcionários
-	@RequestMapping(value = "/cadastrarFuncionario", method = RequestMethod.GET)
+	@RequestMapping("/cadastrarFuncionario")
 	public String form() {
 		return "funcionario/form-funcionario";
 	}
@@ -55,7 +55,7 @@ public class FuncionarioController {
 	}
 
 	// listar dependentes
-	@RequestMapping(value = "/detalhes-funcionario/{id}", method = RequestMethod.GET)
+	@RequestMapping("/detalhes-funcionario/{id}")
 	public ModelAndView detalhesFuncionario(@PathVariable("id") long id) {
 		Funcionario funcionario = fr.findById(id);
 		ModelAndView mv = new ModelAndView("funcionario/detalhes-funcionario");
@@ -103,7 +103,7 @@ public class FuncionarioController {
 	
 	// Métodos que atualizam funcionário
 	//form
-	@RequestMapping(value="/editar-funcionario", method = RequestMethod.GET)
+	@RequestMapping("/editar-funcionario")
 	public ModelAndView editarFuncionario(long id) {
 		Funcionario funcionario = fr.findById(id);
 		ModelAndView mv = new ModelAndView("funcionario/update-funcionario");
