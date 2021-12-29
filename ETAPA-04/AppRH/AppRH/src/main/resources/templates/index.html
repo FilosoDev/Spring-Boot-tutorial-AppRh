@@ -167,7 +167,7 @@
 							<tbody>
 								<tr th:each="funcionario : ${funcionarios}">
 									<td><a
-										th:href="${(#mvc.url('FC#dependentes').arg(0, funcionario.id)).build()}"><span
+										th:href="${(#mvc.url('FC#detalhesFuncionario').arg(0, funcionario.id)).build()}"><span
 											th:text="${funcionario.nome}"></span></a> - em <i>funcionários.</i></td>
 
 

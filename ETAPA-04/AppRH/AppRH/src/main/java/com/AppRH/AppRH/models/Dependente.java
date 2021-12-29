@@ -2,6 +2,7 @@ package com.AppRH.AppRH.models;
 
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Entity;
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
@@ -11,7 +12,7 @@ import javax.persistence.ManyToOne;
 public class Dependente {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	@Column(unique = true)

@@ -107,7 +107,7 @@ public class VagaController {
 
 		cr.delete(candidato);
 
-		return "redirect:/" + codigo;
+		return "redirect:/vaga/" + codigo;
 
 	}
 
@@ -129,7 +129,7 @@ public class VagaController {
 
 		long codigoLong = vaga.getCodigo();
 		String codigo = "" + codigoLong;
-		return "redirect:/" + codigo;
+		return "redirect:/vaga/" + codigo;
 	}
 
 }
