@@ -59,6 +59,4 @@ public class Candidato {
 		this.vaga = vaga;
 	}
 	
-	
-
 }

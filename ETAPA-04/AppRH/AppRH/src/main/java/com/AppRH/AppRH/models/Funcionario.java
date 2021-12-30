@@ -67,7 +67,4 @@ public class Funcionario implements Serializable {
 		this.dependentes = dependentes;
 	}
 	
-	
-	
-	
 }

@@ -56,12 +56,4 @@ public class Dependente {
 		this.funcionario = funcionario;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }

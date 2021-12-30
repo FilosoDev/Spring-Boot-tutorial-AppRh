@@ -10,11 +10,9 @@ import com.AppRH.AppRH.models.Funcionario;
 public interface FuncionarioRepository extends CrudRepository<Funcionario, Long>{
 	
 	Funcionario findById(long id);
-	
-	// busca
 	Funcionario findByNome(String nome);
 	
-	// para a busca
+	// Query para a busca
 	@Query(value = "select u from Funcionario u where u.nome like %?1%")
 	List<Funcionario>findByNomes(String nome);
 

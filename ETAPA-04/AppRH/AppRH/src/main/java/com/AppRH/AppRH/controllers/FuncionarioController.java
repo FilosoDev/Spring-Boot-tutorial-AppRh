@@ -25,13 +25,13 @@ public class FuncionarioController {
 	@Autowired
 	private DependenteRepository dr;
 
-	// chamo o form de casdatrar funcionários
+	// GET que chama o form para cadastrar funcionários
 	@RequestMapping("/cadastrarFuncionario")
 	public String form() {
 		return "funcionario/form-funcionario";
 	}
 
-	// cadastra funcionários
+	// POST que cadastra funcionários
 	@RequestMapping(value = "/cadastrarFuncionario", method = RequestMethod.POST)
 	public String form(@Valid Funcionario funcionario, BindingResult result, RedirectAttributes attributes) {
 
@@ -45,7 +45,7 @@ public class FuncionarioController {
 		return "redirect:/cadastrarFuncionario";
 	}
 
-	// listar funcionário
+	// GET que lista funcionários
 	@RequestMapping("/funcionarios")
 	public ModelAndView listaFuncionarios() {
 		ModelAndView mv = new ModelAndView("funcionario/lista-funcionario");
@@ -54,14 +54,14 @@ public class FuncionarioController {
 		return mv;
 	}
 
-	// listar dependentes
+	// GET que lista dependentes e detalhes dos funcionário
 	@RequestMapping("/detalhes-funcionario/{id}")
 	public ModelAndView detalhesFuncionario(@PathVariable("id") long id) {
 		Funcionario funcionario = fr.findById(id);
 		ModelAndView mv = new ModelAndView("funcionario/detalhes-funcionario");
 		mv.addObject("funcionarios", funcionario);
 
-		// lista de dependentes baseada no funcionário
+		// lista de dependentes baseada no id do funcionário
 		Iterable<Dependente> dependentes = dr.findByFuncionario(funcionario);
 		mv.addObject("dependentes", dependentes);
 
@@ -69,7 +69,7 @@ public class FuncionarioController {
 
 	}
 
-	// Adicionar dependentes
+	// POST que adiciona dependentes
 	@RequestMapping(value="/detalhes-funcionario/{id}", method = RequestMethod.POST)
 	public String detalhesFuncionarioPost(@PathVariable("id") long id, Dependente dependentes, BindingResult result,
 			RedirectAttributes attributes) {
@@ -92,7 +92,7 @@ public class FuncionarioController {
 		
 	}
 	
-	//deleta funcionário
+	//GET que deleta funcionário
 	@RequestMapping("/deletarFuncionario")
 	public String deletarFuncionario(long id) {
 		Funcionario funcionario = fr.findById(id);
@@ -102,7 +102,7 @@ public class FuncionarioController {
 	}
 	
 	// Métodos que atualizam funcionário
-	//form
+	// GET que chama o FORM de edição do funcionário
 	@RequestMapping("/editar-funcionario")
 	public ModelAndView editarFuncionario(long id) {
 		Funcionario funcionario = fr.findById(id);
@@ -111,7 +111,7 @@ public class FuncionarioController {
 		return mv;
 	}
 	
-	// update funcionário
+	// POST que atualiza o funcionário
 	@RequestMapping(value = "/editar-funcionario", method = RequestMethod.POST)
 	public String updateFuncionario(@Valid Funcionario funcionario,  BindingResult result, RedirectAttributes attributes){
 		
@@ -124,7 +124,7 @@ public class FuncionarioController {
 		
 	}
 	
-	// deletar dependente
+	// GET que deleta dependente
 	@RequestMapping("/deletarDependente")
 	public String deletarDependente(String cpf) {
 		Dependente dependente = dr.findByCpf(cpf);
@@ -136,14 +136,4 @@ public class FuncionarioController {
 		return "redirect:/detalhes-funcionario/" + codigo;
 	
 	}
-		
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

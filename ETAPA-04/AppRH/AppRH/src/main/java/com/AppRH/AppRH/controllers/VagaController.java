@@ -24,12 +24,13 @@ public class VagaController {
 	@Autowired
 	private CandidatoRepository cr;
 
-	// CADASTRA VAGA
+	// GET que chama o FORM que cadastra vaga
 	@RequestMapping("/cadastrarVaga")
 	public String form() {
 		return "vaga/form-vaga";
 	}
 
+	// POST que cadastra a vaga
 	@RequestMapping(value = "/cadastrarVaga", method = RequestMethod.POST)
 	public String form(@Valid Vaga vaga, BindingResult result, RedirectAttributes attributes) {
 
@@ -43,8 +44,7 @@ public class VagaController {
 		return "redirect:/cadastrarVaga";
 	}
 
-	// LISTA VAGAS
-
+	// GET que lista as vagas
 	@RequestMapping("/vagas")
 	public ModelAndView listaVagas() {
 		ModelAndView mv = new ModelAndView("vaga/lista-vaga");
@@ -53,7 +53,7 @@ public class VagaController {
 		return mv;
 	}
 
-	//
+	// GET que mostra os detalhes da vaga e os candidatos
 	@RequestMapping("/vaga/{codigo}")
 	public ModelAndView detalhesVaga(@PathVariable("codigo") long codigo) {
 		Vaga vaga = vr.findByCodigo(codigo);
@@ -67,7 +67,7 @@ public class VagaController {
 
 	}
 
-	// DELETA VAGA
+	// GET que deleta a vaga
 	@RequestMapping("/deletarVaga")
 	public String deletarVaga(long codigo) {
 		Vaga vaga = vr.findByCodigo(codigo);
@@ -75,7 +75,7 @@ public class VagaController {
 		return "redirect:/vagas";
 	}
 
-	// ADICIONAR CANDIDATO
+	// POST que adiciona candidato a vaga
 	@RequestMapping(value = "/vaga/{codigo}", method = RequestMethod.POST)
 	public String detalhesVagaPost(@PathVariable("codigo") long codigo, @Valid Candidato candidato,
 			BindingResult result, RedirectAttributes attributes) {
@@ -98,7 +98,7 @@ public class VagaController {
 		return "redirect:/vaga/{codigo}";
 	}
 
-	// DELETA CANDIDATO pelo RG
+	// GET que deleta o candidato pelo RG
 	@RequestMapping("/deletarCandidato")
 	public String deletarCandidato(String rg) {
 		Candidato candidato = cr.findByRg(rg);
@@ -112,7 +112,7 @@ public class VagaController {
 	}
 
 	// Métodos que atualizam vaga
-	// formulário edição de vaga
+	// GET que chama o formulário de edição da vaga
 	@RequestMapping("/editar-vaga")
 	public ModelAndView editarVaga(long codigo) {
 		Vaga vaga = vr.findByCodigo(codigo);
@@ -121,7 +121,7 @@ public class VagaController {
 		return mv;
 	}
 
-	// UPDATE vaga
+	// POST do FORM que atualiza a vaga
 	@RequestMapping(value = "/editar-vaga", method = RequestMethod.POST)
 	public String updateVaga(@Valid Vaga vaga, BindingResult result, RedirectAttributes attributes) {
 		vr.save(vaga);
